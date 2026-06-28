@@ -1,0 +1,828 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0f3a2b" />
+
+  <title>Saberes Ancestrais e Resiliência</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="./style.css" />
+</head>
+
+<body>
+  <a class="skip-link" href="#inicio">Pular para o conteúdo</a>
+
+  <header class="nav" id="top">
+    <div class="nav__inner">
+      <a class="logo" href="#inicio" aria-label="Início">
+        <span class="logo__mark" aria-hidden="true">
+          <svg viewBox="0 0 64 64" role="img" aria-label="Símbolo">
+            <path d="M32 6c10 6 16 16 16 27 0 14-10 25-16 25S16 47 16 33c0-11 6-21 16-27Z" fill="currentColor" opacity="0.18"></path>
+            <path d="M32 12c8 5 12 13 12 21 0 11-8 20-12 20s-12-9-12-20c0-8 4-16 12-21Z" fill="currentColor" opacity="0.28"></path>
+            <path d="M20 36c5-9 13-14 24-15" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <path d="M22 43c6-6 14-9 24-8" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+            <path d="M26 49c5-3 11-4 18-3" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"></path>
+          </svg>
+        </span>
+        <span class="logo__text">Saberes Ancestrais</span>
+      </a>
+
+      <button class="nav__toggle" type="button" aria-label="Abrir menu" aria-expanded="false" aria-controls="nav-menu">
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+        <span class="nav__toggle-bar" aria-hidden="true"></span>
+      </button>
+
+      <nav class="nav__menu" id="nav-menu" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio" data-section="inicio">Início</a></li>
+          <li><a href="#timeline" data-section="timeline">Linha do Tempo</a></li>
+          <li><a href="#mapa" data-section="mapa">Mapa</a></li>
+          <li><a href="#tecnologias" data-section="tecnologias">Tecnologias</a></li>
+          <li><a href="#racismo" data-section="racismo">Racismo Ambiental</a></li>
+          <li><a href="#solucoes" data-section="solucoes">Soluções</a></li>
+          <li><a href="#quiz" data-section="quiz">Quiz</a></li>
+          <li><a href="#galeria" data-section="galeria">Galeria</a></li>
+          <li><a href="#curiosidades" data-section="curiosidades">Curiosidades</a></li>
+          <li><a href="#creditos" data-section="creditos">Créditos</a></li>
+
+        </ul>
+
+        <div class="nav__controls" aria-label="Controles de acessibilidade">
+          <div class="segmented" role="group" aria-label="Modo de exibição">
+            <button class="segmented__btn is-active" type="button" data-theme="system">Sistema</button>
+            <button class="segmented__btn" type="button" data-theme="light">Claro</button>
+            <button class="segmented__btn" type="button" data-theme="dark">Escuro</button>
+          </div>
+
+          <div class="font" role="group" aria-label="Tamanho da fonte">
+            <button class="font__btn" type="button" data-font="down" aria-label="Diminuir fonte">A−</button>
+            <span class="font__value" id="fontValue" aria-live="polite">100%</span>
+            <button class="font__btn" type="button" data-font="up" aria-label="Aumentar fonte">A+</button>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+          <div class="progress" aria-hidden="true">
+    <div class="progress__bar" id="progressBar"></div>
+  </div>
+
+  <main id="inicio" class="page">
+    <section class="hero" aria-label="Apresentação">
+      <div class="hero__bg" aria-hidden="true">
+        <div class="hero__grain"></div>
+        <svg class="hero__waves" viewBox="0 0 1440 520" preserveAspectRatio="none" aria-hidden="true">
+          <path d="M0,320 C240,220 360,420 600,330 C840,240 900,170 1120,240 C1260,285 1340,340 1440,315 L1440,520 L0,520 Z" fill="currentColor" opacity="0.16"></path>
+          <path d="M0,360 C220,290 380,430 610,365 C850,295 910,230 1130,292 C1270,332 1340,375 1440,355 L1440,520 L0,520 Z" fill="currentColor" opacity="0.10"></path>
+        </svg>
+      </div>
+
+      <div class="container hero__content">
+        <div class="hero__media" aria-hidden="true">
+          <div class="hero__imageFrame">
+            <!-- imagem inline (SVG) para manter "do zero" sem depender de assets externos -->
+            <svg viewBox="0 0 860 520" role="img" aria-label="Paisagem abstrata inspirada em marcos ancestrais">
+              <defs>
+                <linearGradient id="g1" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0f3a2b" stop-opacity="0.95" />
+                  <stop offset="0.55" stop-color="#2f6f57" stop-opacity="0.75" />
+                  <stop offset="1" stop-color="#9b6a2a" stop-opacity="0.35" />
+                </linearGradient>
+                <filter id="soft" x="-20%" y="-20%" width="140%" height="140%">
+                  <feGaussianBlur stdDeviation="14" result="b" />
+                  <feColorMatrix in="b" type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.75 0" />
+                </filter>
+              </defs>
+
+              <rect x="0" y="0" width="860" height="520" fill="#F5F1E8" opacity="0.05" />
+              <circle cx="180" cy="150" r="130" fill="url(#g1)" filter="url(#soft)" opacity="0.9" />
+              <circle cx="580" cy="170" r="160" fill="#0f3a2b" opacity="0.20" />
+              <circle cx="650" cy="380" r="190" fill="#9b6a2a" opacity="0.15" />
+
+              <path d="M0 380 C180 310 250 420 430 360 C610 300 700 250 860 280 L860 520 L0 520 Z" fill="#0f3a2b" opacity="0.12" />
+              <path d="M0 410 C210 345 290 450 470 405 C650 360 725 325 860 340 L860 520 L0 520 Z" fill="#9b6a2a" opacity="0.10" />
+
+              <path d="M120 320 C200 260 270 260 345 300" stroke="#0f3a2b" stroke-opacity="0.55" stroke-width="6" fill="none" stroke-linecap="round" />
+              <path d="M160 370 C250 320 330 320 410 355" stroke="#9b6a2a" stroke-opacity="0.45" stroke-width="5" fill="none" stroke-linecap="round" />
+              <path d="M240 250 C305 210 380 210 460 255" stroke="#0f3a2b" stroke-opacity="0.35" stroke-width="5" fill="none" stroke-linecap="round" />
+
+              <g opacity="0.9">
+                <path d="M530 120c-25 40-18 90 12 128" stroke="#F5C86B" stroke-width="4" fill="none" stroke-linecap="round" />
+                <path d="M555 100c-18 28-12 74 10 96" stroke="#F5C86B" stroke-width="3" fill="none" stroke-linecap="round" opacity="0.8" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="hero__badge" aria-hidden="true">
+            <span class="dot"></span>
+            <span>Memória, ciência e cuidado</span>
+          </div>
+        </div>
+
+        <div class="hero__text">
+          <div class="kicker">Saberes Ancestrais &amp; Resiliência • Diáspora Africana</div>
+          <h1>Histórias que atravessam distâncias — e conhecimentos que protegem o futuro.</h1>
+          <p>
+            Um percurso visual e interativo sobre a Diáspora Africana, tecnologias ancestrais,
+            racismo ambiental e soluções sustentáveis inspiradas em práticas de cuidado, comunidade e resistência.
+          </p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#timeline">Explorar</a>
+            <a class="btn btn--ghost" href="#quiz">Testar conhecimentos</a>
+          </div>
+
+          <dl class="hero__stats" aria-label="Destaques">
+            <div>
+              <dt>Linha do Tempo</dt>
+              <dd>marcos históricos e culturais</dd>
+            </div>
+            <div>
+              <dt>Mapa</dt>
+              <dd>rotas e influências</dd>
+            </div>
+            <div>
+              <dt>Resiliência</dt>
+              <dd>soluções e práticas sustentáveis</dd>
+            </div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- Linha do Tempo -->
+    <section class="section" id="timeline" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Linha do Tempo da Diáspora Africana</h2>
+          <p>
+            Uma sequência sintética para orientar a leitura: movimentos forçados, trocas culturais, reconstrução de identidades e
+            respostas comunitárias.
+          </p>
+        </header>
+
+        <div class="timeline" role="list" aria-label="Linha do tempo">
+          <article class="timeline__item" role="listitem" data-year="1500">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3>Rotas e ruptura</h3>
+              <p>
+                O tráfico transatlântico reconfigurou geografias e vidas. Ainda assim, comunidades mantiveram
+                memórias, vínculos e modos de organização.
+              </p>
+              <span class="timeline__tag">Mobilidade forçada</span>
+            </div>
+          </article>
+
+          <article class="timeline__item" role="listitem" data-year="1700">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3>Afirmação cultural</h3>
+              <p>
+                Linguagens, músicas, culinárias e formas de cuidado circulam — com adaptações locais.
+                Conhecimentos atravessam gerações.
+              </p>
+              <span class="timeline__tag">Resistência cotidiana</span>
+            </div>
+          </article>
+
+          <article class="timeline__item" role="listitem" data-year="1900">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3>Novas redes e diálogos</h3>
+              <p>
+                Intelectuais e movimentos ampliam alianças, denunciando violências e propondo justiça social.
+                A educação torna-se ponte.
+              </p>
+              <span class="timeline__tag">Articulação política</span>
+            </div>
+          </article>
+
+          <article class="timeline__item" role="listitem" data-year="2000">
+            <div class="timeline__dot" aria-hidden="true"></div>
+            <div class="timeline__content">
+              <h3>Reconhecimento e proteção</h3>
+              <p>
+                Preservação de patrimônios, valorização de saberes e políticas afirmativas fortalecem a resiliência.
+                Sustentabilidade ganha centralidade.
+              </p>
+              <span class="timeline__tag">Direitos &amp; futuro</span>
+            </div>
+          </article>
+        </div>
+
+        <div class="section__aside">
+          <p class="asideNote">Dica de leitura: observe como os marcadores conectam ruptura, criação e proteção.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mapa -->
+    <section class="section section--alt" id="mapa" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Mapa da Diáspora Africana</h2>
+          <p>
+            Um mapa conceitual (ilustrativo) para visualizar rotas e influências culturais. As trajetórias destacam conexões,
+            não a totalidade do fenômeno.
+          </p>
+        </header>
+
+        <div class="map">
+          <div class="map__frame" aria-hidden="true">
+            <svg class="map__svg" viewBox="0 0 900 420" role="img" aria-label="Mapa ilustrativo">
+              <defs>
+                <linearGradient id="mSea" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0" stop-color="#0f3a2b" stop-opacity="0.18" />
+                  <stop offset="1" stop-color="#9b6a2a" stop-opacity="0.10" />
+                </linearGradient>
+                <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
+                  <feGaussianBlur stdDeviation="4" result="b" />
+                  <feMerge>
+                    <feMergeNode in="b" />
+                    <feMergeNode in="SourceGraphic" />
+                  </feMerge>
+                </filter>
+              </defs>
+
+              <rect x="0" y="0" width="900" height="420" fill="url(#mSea)" />
+
+              <!-- contorno simples -->
+              <path d="M120 110c40-35 98-45 152-25 35 13 66 41 72 78 7 44-18 83-58 105-43 23-96 26-146 9-48-16-88-54-90-100-1-28 9-52 70-67Z" fill="#F5F1E8" opacity="0.35" />
+              <path d="M505 120c35-25 86-27 130-7 43 20 72 62 70 104-2 44-33 82-80 98-45 15-101 8-135-22-40-36-52-92-18-140Z" fill="#F5F1E8" opacity="0.25" />
+              <path d="M360 205c25-20 64-20 98-9 46 15 76 56 71 98-5 44-44 78-92 84-48 6-96-15-112-58-12-31-6-76 35-115Z" fill="#F5F1E8" opacity="0.20" />
+
+              <!-- rotas -->
+              <path d="M250 230 C 350 170, 410 170, 520 215" stroke="#F5C86B" stroke-width="3" fill="none" opacity="0.55" filter="url(#glow)" stroke-linecap="round" />
+              <path d="M250 230 C 300 275, 370 305, 430 320" stroke="#0f3a2b" stroke-width="3" fill="none" opacity="0.45" stroke-linecap="round" />
+              <path d="M290 210 C 410 220, 470 250, 605 300" stroke="#9b6a2a" stroke-width="2.5" fill="none" opacity="0.35" stroke-linecap="round" />
+
+              <!-- pontos -->
+              <g>
+                <circle cx="250" cy="230" r="7" fill="#F5C86B" opacity="0.9" />
+                <circle cx="520" cy="215" r="6" fill="#0f3a2b" opacity="0.85" />
+                <circle cx="430" cy="320" r="5.5" fill="#9b6a2a" opacity="0.8" />
+                <circle cx="605" cy="300" r="5.5" fill="#0f3a2b" opacity="0.75" />
+              </g>
+            </svg>
+          </div>
+
+          <div class="map__legend" role="note">
+            <div class="legendItem">
+              <span class="legendItem__sw sw--gold" aria-hidden="true"></span>
+              <strong>Conexões históricas</strong>
+              <p>Rotas e deslocamentos que moldaram culturas e identidades.</p>
+            </div>
+            <div class="legendItem">
+              <span class="legendItem__sw sw--green" aria-hidden="true"></span>
+              <strong>Trocas culturais</strong>
+              <p>Recriações artísticas, linguísticas e de cuidado.</p>
+            </div>
+            <div class="legendItem">
+              <span class="legendItem__sw sw--brown" aria-hidden="true"></span>
+              <strong>Resiliência</strong>
+              <p>Formas de organização comunitária e proteção.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Tecnologias Ancestrais -->
+    <section class="section" id="tecnologias" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Tecnologias Ancestrais</h2>
+          <p>
+            Não como “folclore”: tecnologias de observação, adaptação e sustentabilidade — construídas com respeito aos ciclos.
+          </p>
+        </header>
+
+        <div class="mix">
+          <div class="mix__text">
+            <p class="lead">Conhecimentos acumulados em ecossistemas diversos.</p>
+            <p>
+              Do manejo de solos ao uso de materiais locais, práticas ancestrais demonstram como ciência e cuidado
+              podem coexistir.
+            </p>
+            <div class="callout">
+              <div class="callout__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" role="img" aria-label="Ícone">
+                  <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7Zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5S10.62 6.5 12 6.5s2.5 1.12 2.5 2.5S13.38 11.5 12 11.5Z" fill="currentColor"/>
+                </svg>
+              </div>
+              <p>
+                Ao longo do percurso, repare como cada tecnologia responde a um “problema real” do ambiente: água, calor, solo,
+                conservação.
+              </p>
+            </div>
+          </div>
+
+          <div class="mix__grid" aria-label="Lista de tecnologias">
+            <article class="tCard">
+              <div class="tCard__media" aria-hidden="true">🌿</div>
+              <h3>Permacultura de quintais</h3>
+              <p>
+                Arranjos produtivos que combinam espécies e protegem a fertilidade do solo.
+              </p>
+              <details class="tCard__more">
+                <summary>Curiosidade</summary>
+                <p>Em muitos contextos, a diversidade reduz pragas e melhora a retenção de água.</p>
+              </details>
+            </article>
+
+            <article class="tCard">
+              <div class="tCard__media" aria-hidden="true">🪴</div>
+              <h3>Conhecimento botânico</h3>
+              <p>
+                Identificação de plantas e seus usos medicinais, respeitando sazonalidade e limites.
+              </p>
+              <details class="tCard__more">
+                <summary>Curiosidade</summary>
+                <p>O saber tradicional costuma vir acompanhado de rituais de cuidado e coleta responsável.</p>
+              </details>
+            </article>
+
+            <article class="tCard">
+              <div class="tCard__media" aria-hidden="true">🧱</div>
+              <h3>Arquitetura bioclimática</h3>
+              <p>
+                Estratégias de ventilação e sombra para reduzir extremos térmicos.
+              </p>
+              <details class="tCard__more">
+                <summary>Curiosidade</summary>
+                <p>Materiais e técnicas são selecionados conforme um “mapa local” de clima e recursos.</p>
+              </details>
+            </article>
+
+            <article class="tCard">
+              <div class="tCard__media" aria-hidden="true">🌾</div>
+              <h3>Conservação de sementes</h3>
+              <p>
+                Práticas para manter germinação e proteger diversidade genética ao longo das estações.
+              </p>
+              <details class="tCard__more">
+                <summary>Curiosidade</summary>
+                <p>Variedades preservadas fortalecem resistência a secas e mudanças climáticas.</p>
+              </details>
+            </article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Racismo Ambiental -->
+    <section class="section section--alt" id="racismo" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Racismo Ambiental</h2>
+          <p>
+            Quando a poluição, a falta de saneamento e os riscos recaem de forma desproporcional sobre grupos racializados.
+          </p>
+        </header>
+
+        <div class="twoCol">
+          <div class="viz">
+            <div class="viz__chart" aria-label="Indicadores (ilustrativos)">
+              <div class="viz__bars">
+                <div class="bar" style="--h:78%"><span>Ar</span><i>78</i></div>
+                <div class="bar" style="--h:64%"><span>Solo</span><i>64</i></div>
+                <div class="bar" style="--h:71%"><span>Água</span><i>71</i></div>
+                <div class="bar" style="--h:58%"><span>Resíduos</span><i>58</i></div>
+              </div>
+              <div class="viz__caption">Desigualdade de exposição a riscos (representação conceitual).</div>
+            </div>
+
+            <div class="viz__call">
+              <h3>Leitura rápida</h3>
+              <ul class="checklist">
+                <li><span aria-hidden="true">✓</span> Falta de participação efetiva</li>
+                <li><span aria-hidden="true">✓</span> Vulnerabilidades históricas acumuladas</li>
+                <li><span aria-hidden="true">✓</span> Necessidade de justiça territorial</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="copy">
+            <p class="lead">Ambiente não é neutro.</p>
+            <p>
+              Racismo ambiental se manifesta na forma como o poder decide onde colocar riscos e onde oferecer proteção.
+              Envolve políticas, decisões de infraestrutura, acesso a informações e capacidade de resposta.
+            </p>
+
+            <div class="quote">
+              <blockquote>
+                “Cuidar do território é uma prática de justiça — e de memória.”
+              </blockquote>
+              <cite>— síntese pedagógica para reflexão</cite>
+            </div>
+
+            <div class="infoTiles">
+              <div class="infoTile">
+                <strong>Impactos</strong>
+                <p>Saúde, qualidade de vida e acesso a serviços básicos.</p>
+              </div>
+              <div class="infoTile">
+                <strong>Respostas</strong>
+                <p>Organização comunitária, ciência cidadã e políticas afirmativas.</p>
+              </div>
+            </div>
+
+            <a class="btn btn--ghost" href="#solucoes">Ver soluções</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Soluções Sustentáveis -->
+    <section class="section" id="solucoes" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Soluções Sustentáveis</h2>
+          <p>
+            Estratégias que protegem ecossistemas e ampliam cuidado comunitário. Algumas dialogam diretamente com tecnologias ancestrais.
+          </p>
+        </header>
+
+        <div class="solutions">
+          <article class="solution" data-pop>
+            <div class="solution__top">
+              <span class="solution__icon" aria-hidden="true">💧</span>
+              <h3>Gestão de água com ciclos</h3>
+            </div>
+            <p>
+              Captura, armazenamento e uso racional: sistemas locais e manutenção participativa.
+            </p>
+          </article>
+
+          <article class="solution" data-pop>
+            <div class="solution__top">
+              <span class="solution__icon" aria-hidden="true">♻️</span>
+              <h3>Economia circular e reaproveitamento</h3>
+            </div>
+            <p>
+              Reduz desperdício e valoriza resíduos como recurso para novas cadeias.
+            </p>
+          </article>
+
+          <article class="solution" data-pop>
+            <div class="solution__top">
+              <span class="solution__icon" aria-hidden="true">🌱</span>
+              <h3>Solo vivo, produtividade duradoura</h3>
+            </div>
+            <p>
+              Cobertura vegetal, compostagem e diversidade que fortalecem resiliência.
+            </p>
+          </article>
+
+          <article class="solution" data-pop>
+            <div class="solution__top">
+              <span class="solution__icon" aria-hidden="true">🏘️</span>
+              <h3>Justiça territorial</h3>
+            </div>
+            <p>
+              Planejamento com participação, transparência e garantia de direitos.
+            </p>
+          </article>
+        </div>
+
+        <div class="section__aside">
+          <div class="asideCard">
+            <h3>Conexão com o ancestral</h3>
+            <p>
+              Muitas soluções sustentáveis ganham força quando incorporam o que as comunidades já praticam:
+              ciclos, cuidado e conhecimento local.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quiz -->
+    <section class="section section--alt" id="quiz" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Quiz</h2>
+          <p>
+            Responda para consolidar conceitos. Ao finalizar, você recebe uma pontuação e um certificado simbólico
+            se atingir <strong>70%</strong> ou mais.
+          </p>
+        </header>
+
+        <div class="quiz" aria-live="polite">
+          <div class="quiz__panel">
+            <form id="quizForm">
+              <div class="q" data-q="1">
+                <h3>1) Qual característica aproxima tecnologias ancestrais de práticas sustentáveis?</h3>
+                <label><input type="radio" name="q1" value="a" required />A) Imprevisibilidade e excesso de recursos</label>
+                <label><input type="radio" name="q1" value="b" />B) Adaptação a ciclos e uso racional</label>
+                <label><input type="radio" name="q1" value="c" />C) Dependência total de insumos externos</label>
+              </div>
+
+              <div class="q" data-q="2">
+                <h3>2) Racismo ambiental se refere principalmente a quê?</h3>
+                <label><input type="radio" name="q2" value="a" required />A) Distribuição igual de riscos para todos</label>
+                <label><input type="radio" name="q2" value="b" />B) Recaem riscos desproporcionais sobre grupos racializados</label>
+                <label><input type="radio" name="q2" value="c" />C) Proteção ambiental sempre prioritária</label>
+              </div>
+
+              <div class="q" data-q="3">
+                <h3>3) Qual é um exemplo de solução sustentável?</h3>
+                <label><input type="radio" name="q3" value="a" required />A) Descarte sem planejamento e sem controle</label>
+                <label><input type="radio" name="q3" value="b" />B) Economia circular e reaproveitamento</label>
+                <label><input type="radio" name="q3" value="c" />C) Redução da participação comunitária</label>
+              </div>
+
+              <div class="q" data-q="4">
+                <h3>4) Por que a valorização do conhecimento local é importante?</h3>
+                <label><input type="radio" name="q4" value="a" required />A) Porque substitui totalmente a ciência</label>
+                <label><input type="radio" name="q4" value="b" />B) Porque pode complementar decisões com base em ciclos e contexto</label>
+                <label><input type="radio" name="q4" value="c" />C) Porque ignora o território</label>
+              </div>
+
+              <div class="quiz__actions">
+                <button class="btn btn--primary" type="submit">Finalizar quiz</button>
+                <button class="btn btn--ghost" type="button" id="resetQuiz">Refazer</button>
+              </div>
+            </form>
+          </div>
+
+          <div class="quiz__result" id="quizResult" hidden>
+            <div class="resultCard">
+              <div class="resultCard__head">
+                <h3 id="scoreTitle">Resultado</h3>
+                <span class="scoreBadge" id="scoreBadge">0%</span>
+              </div>
+              <p id="scoreSummary" class="resultCard__text"></p>
+
+              <div class="cert" id="cert" hidden>
+                <div class="cert__seal" aria-hidden="true">🏛️</div>
+                <h4>Certificado simbólico</h4>
+                <p>
+                  Você atingiu a meta e demonstrou compreensão sobre Diáspora, racismo ambiental e soluções sustentáveis.
+                </p>
+                <div class="cert__line">
+                  <span class="cert__label">Entregue para</span>
+                  <span class="cert__value" id="certName">Participante</span>
+                </div>
+                <div class="cert__meta">
+                  <span id="certDate"></span>
+                </div>
+                <button class="btn btn--ghost" type="button" id="downloadCert">Baixar (PNG)</button>
+              </div>
+
+              <div class="quiz__foot">
+                <p class="muted">
+                  Observação: este certificado é apenas simbólico, para incentivar a aprendizagem.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Galeria -->
+    <section class="section" id="galeria" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Galeria</h2>
+          <p>
+            Uma curadoria visual para acompanhar o tema. Clique para ampliar.
+          </p>
+        </header>
+
+        <div class="gallery" aria-label="Galeria de imagens">
+          <figure class="gItem" data-title="Memória e mar" tabindex="0" role="button" aria-label="Abrir imagem Memória e mar">
+            <img alt="Ilustração abstrata de mar e memória" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='a' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f3a2b' stop-opacity='.9'/%3E%3Cstop offset='.65' stop-color='%23F5C86B' stop-opacity='.35'/%3E%3Cstop offset='1' stop-color='%239b6a2a' stop-opacity='.25'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Cpath d='M0 420 C 220 350 300 520 520 440 C 700 375 790 310 900 335 L900 600 L0 600 Z' fill='url(%23a)' opacity='.22'/%3E%3Ccircle cx='200' cy='150' r='120' fill='%230f3a2b' opacity='.15'/%3E%3Ccircle cx='640' cy='190' r='160' fill='%23F5C86B' opacity='.12'/%3E%3Cpath d='M120 340 C 240 260 330 270 420 330' stroke='%23F5C86B' stroke-width='6' fill='none' stroke-linecap='round' opacity='.55'/%3E%3Cpath d='M170 410 C 280 340 380 345 490 390' stroke='%230f3a2b' stroke-width='5' fill='none' stroke-linecap='round' opacity='.45'/%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Tramas vivas" tabindex="0" role="button" aria-label="Abrir imagem Tramas vivas">
+            <img alt="Ilustração abstrata de tramas" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='b' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6f57' stop-opacity='.85'/%3E%3Cstop offset='.6' stop-color='%23F5C86B' stop-opacity='.25'/%3E%3Cstop offset='1' stop-color='%230f3a2b' stop-opacity='.15'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Crect x='120' y='120' width='660' height='360' rx='24' fill='url(%23b)' opacity='.15'/%3E%3Cpath d='M170 430 C 270 260 410 260 520 430' stroke='%230f3a2b' stroke-opacity='.45' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M280 450 C 340 360 430 340 560 390' stroke='%23F5C86B' stroke-opacity='.55' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3Cg opacity='.55'%3E%3Cpath d='M190 220 L710 220' stroke='%239b6a2a' stroke-width='4'/%3E%3Cpath d='M230 250 L680 250' stroke='%232f6f57' stroke-width='4'/%3E%3Cpath d='M270 280 L650 280' stroke='%23F5C86B' stroke-width='3'/%3E%3C/g%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Cuidado no território" tabindex="0" role="button" aria-label="Abrir imagem Cuidado no território">
+            <img alt="Ilustração abstrata de cuidado no território" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='c' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f3a2b' stop-opacity='.8'/%3E%3Cstop offset='.6' stop-color='%232f6f57' stop-opacity='.35'/%3E%3Cstop offset='1' stop-color='%23F5C86B' stop-opacity='.18'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Ccircle cx='260' cy='210' r='150' fill='url(%23c)' opacity='.22'/%3E%3Ccircle cx='620' cy='240' r='190' fill='%230f3a2b' opacity='.12'/%3E%3Cpath d='M160 420 C 260 360 340 350 450 390 C 560 430 650 420 760 370' stroke='%23F5C86B' stroke-opacity='.55' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M240 460 C 310 420 370 410 460 430 C 560 455 640 450 720 420' stroke='%230f3a2b' stroke-opacity='.4' stroke-width='5' fill='none' stroke-linecap='round'/%3E%3Cpath d='M450 160c-20 60 20 110 70 130' stroke='%239b6a2a' stroke-opacity='.55' stroke-width='6' fill='none' stroke-linecap='round'/%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Ciência cidadã" tabindex="0" role="button" aria-label="Abrir imagem Ciência cidadã">
+            <img alt="Ilustração abstrata de ciência cidadã" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='d' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%239b6a2a' stop-opacity='.35'/%3E%3Cstop offset='.55' stop-color='%23F5C86B' stop-opacity='.18'/%3E%3Cstop offset='1' stop-color='%230f3a2b' stop-opacity='.55'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Crect x='120' y='100' width='660' height='400' rx='30' fill='url(%23d)' opacity='.18'/%3E%3Cg opacity='.9'%3E%3Cpath d='M250 450 L420 250 L540 360 L650 210' stroke='%230f3a2b' stroke-width='8' fill='none' stroke-linecap='round'/%3E%3Cpath d='M250 450 L420 250 L540 360 L650 210' stroke='%23F5C86B' stroke-width='4' fill='none' stroke-linecap='round' opacity='.5'/%3E%3Ccircle cx='420' cy='250' r='10' fill='%23F5C86B'/%3E%3Ccircle cx='540' cy='360' r='8' fill='%232f6f57' opacity='.8'/%3E%3Ccircle cx='650' cy='210' r='8' fill='%239b6a2a' opacity='.75'/%3E%3C/g%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Florescer" tabindex="0" role="button" aria-label="Abrir imagem Florescer">
+            <img alt="Ilustração abstrata de florescer" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='e' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%232f6f57' stop-opacity='.75'/%3E%3Cstop offset='.7' stop-color='%239b6a2a' stop-opacity='.2'/%3E%3Cstop offset='1' stop-color='%230f3a2b' stop-opacity='.35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Ccircle cx='450' cy='300' r='200' fill='url(%23e)' opacity='.18'/%3E%3Cg opacity='.65'%3E%3Cpath d='M450 140c40 60 35 120-15 155c-42 29-88 18-120-25c-31-43-25-95 15-130c35-31 78-25 120 0Z' fill='%23F5C86B'/%3E%3Cpath d='M650 330c-60 40-120 35-155-15c-29-42-18-88 25-120c43-31 95-25 130 15c31 35 25 78 0 120Z' fill='%232f6f57' opacity='.7'/%3E%3Cpath d='M250 380c60-40 120-35 155 15c29 42 18 88-25 120c-43 31-95 25-130-15c-31-35-25-78 0-120Z' fill='%230f3a2b' opacity='.35'/%3E%3C/g%3E%3Cpath d='M230 250 C 320 210 380 210 470 250' stroke='%23F5C86B' stroke-width='6' fill='none' stroke-linecap='round' opacity='.55'/%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Paisagem e memória" tabindex="0" role="button" aria-label="Abrir imagem Paisagem e memória">
+            <img alt="Ilustração abstrata de paisagem" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='f' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%230f3a2b' stop-opacity='.55'/%3E%3Cstop offset='.5' stop-color='%23F5C86B' stop-opacity='.20'/%3E%3Cstop offset='1' stop-color='%232f6f57' stop-opacity='.35'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Cpath d='M0 360 C 240 260 360 460 600 370 C 800 295 830 270 900 290 L900 600 L0 600 Z' fill='url(%23f)' opacity='.22'/%3E%3Cpath d='M120 440 C 240 380 350 400 450 430 C 560 463 680 450 780 410' stroke='%230f3a2b' stroke-width='6' fill='none' stroke-linecap='round' opacity='.4'/%3E%3Ccircle cx='240' cy='210' r='120' fill='%230f3a2b' opacity='.12'/%3E%3Ccircle cx='660' cy='180' r='160' fill='%23F5C86B' opacity='.12'/%3E%3C/svg%3E" />
+          </figure>
+
+          <figure class="gItem" data-title="Rotas de troca" tabindex="0" role="button" aria-label="Abrir imagem Rotas de troca">
+            <img alt="Ilustração abstrata de rotas" loading="lazy" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='900' height='600'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%239b6a2a' stop-opacity='.35'/%3E%3Cstop offset='.55' stop-color='%230f3a2b' stop-opacity='.45'/%3E%3Cstop offset='1' stop-color='%23F5C86B' stop-opacity='.22'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='900' height='600' fill='%23F5F1E8'/%3E%3Crect x='100' y='120' width='700' height='360' rx='24' fill='url(%23g)' opacity='.15'/%3E%3Cg opacity='.8'%3E%3Cpath d='M160 360 C 260 250 360 250 460 320 C 560 390 650 400 760 310' stroke='%23F5C86B' stroke-width='7' fill='none' stroke-linecap='round'/%3E%3Cpath d='M190 420 C 290 350 390 340 500 395 C 610 450 690 455 760 420' stroke='%232f6f57' stroke-width='5' fill='none' stroke-linecap='round' opacity='.7'/%3E%3C/g%3E%3Ccircle cx='460' cy='320' r='10' fill='%23F5C86B'/%3E%3Ccircle cx='760' cy='310' r='8' fill='%230f3a2b' opacity='.7'/%3E%3Ccircle cx='160' cy='360' r='8' fill='%239b6a2a' opacity='.75'/%3E%3C/svg%3E" />
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- Curiosidades -->
+    <section class="section section--alt" id="curiosidades" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Curiosidades</h2>
+          <p>
+            Pequenas descobertas para aprofundar. Componentes interativos, sem exageros.
+          </p>
+        </header>
+
+        <div class="curios">
+          <details class="curio" open>
+            <summary>
+              <span class="curio__q" aria-hidden="true">↳</span>
+              Por que a diversidade vegetal é uma estratégia de resiliência?
+            </summary>
+            <p>
+              Diversificar reduz riscos: quando uma espécie sofre, outras podem sustentar o sistema. Isso melhora a estabilidade
+              ecológica e a produção.
+            </p>
+          </details>
+
+          <details class="curio">
+            <summary>
+              <span class="curio__q" aria-hidden="true">↳</span>
+              O que significa “território” em termos de justiça?
+            </summary>
+            <p>
+              Território envolve relação social, memória e acesso a recursos. Justiça territorial inclui participação na decisão
+              e proteção frente a riscos.
+            </p>
+          </details>
+
+          <details class="curio">
+            <summary>
+              <span class="curio__q" aria-hidden="true">↳</span>
+              Como o conhecimento local pode dialogar com a ciência?
+            </summary>
+            <p>
+              A ciência verifica hipóteses e mede impactos; o conhecimento local fornece contexto, padrões e prioridades.
+              Juntos, criam soluções mais adequadas.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section" id="faq" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>FAQ</h2>
+          <p>Respostas diretas para dúvidas comuns.</p>
+        </header>
+
+        <div class="faq" role="region" aria-label="Perguntas frequentes">
+          <details class="faqItem" open>
+            <summary>O site apresenta dados históricos completos?</summary>
+            <p>
+              Não. O objetivo é oferecer uma estrutura pedagógica e visual para orientar o estudo, com exemplos conceituais
+              e foco em compreensão.
+            </p>
+          </details>
+
+          <details class="faqItem">
+            <summary>As tecnologias ancestrais são compatíveis com sustentabilidade moderna?</summary>
+            <p>
+              Sim. Muitas práticas já incorporam princípios de sustentabilidade: ciclos, reparo, diversidade e conservação.
+              A integração pode ampliar eficiência e cuidado.
+            </p>
+          </details>
+
+          <details class="faqItem">
+            <summary>O certificado do quiz é oficial?</summary>
+            <p>
+              Não. É um certificado simbólico, voltado a incentivar a aprendizagem e reconhecer o desempenho no quiz.
+            </p>
+          </details>
+
+          <details class="faqItem">
+            <summary>Como funciona o modo escuro/claro?</summary>
+            <p>
+              O site alterna tema e respeita preferências do navegador. Há também controles de tamanho de fonte para melhorar legibilidade.
+            </p>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section class="section section--alt" id="contato" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Contato</h2>
+          <p>
+            Envie uma mensagem para compartilhar contribuições, sugestões e referências.
+          </p>
+        </header>
+
+        <form class="contact" id="contactForm">
+          <div class="field">
+            <label for="name">Nome</label>
+            <input id="name" name="name" type="text" placeholder="Seu nome" required />
+          </div>
+          <div class="field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" placeholder="voce@exemplo.com" required />
+          </div>
+          <div class="field field--full">
+            <label for="msg">Mensagem</label>
+            <textarea id="msg" name="msg" rows="5" placeholder="Escreva sua mensagem..." required></textarea>
+          </div>
+          <div class="field field--full">
+            <button class="btn btn--primary" type="submit">Enviar</button>
+            <p class="muted" id="contactStatus" role="status"></p>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- Créditos -->
+    <section class="section" id="creditos" data-observe>
+      <div class="container">
+        <header class="section__head">
+          <h2>Créditos</h2>
+          <p>
+            Texto e estrutura inspirados em referências acadêmicas e materiais de divulgação. As ilustrações são abstratas e criadas
+            para fins visuais.
+          </p>
+        </header>
+
+        <div class="credits">
+          <div class="credit">
+            <strong>Design &amp; implementação</strong>
+            <span>Projeto: Saberes Ancestrais e Resiliência</span>
+          </div>
+          <div class="credit">
+            <strong>Tipografia</strong>
+            <span>Merriweather • Poppins (Google Fonts)</span>
+          </div>
+          <div class="credit">
+            <strong>Responsividade</strong>
+            <span>Layout fluido com breakpoints e navegação acessível</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer" aria-label="Rodapé">
+      <div class="container footer__inner">
+        <div>
+          <div class="footer__logo">
+            <span class="footer__logoMark" aria-hidden="true">✦</span>
+            <strong>Saberes Ancestrais</strong>
+          </div>
+          <p class="muted">© <span id="year"></span> • Um percurso de aprendizagem e cuidado.</p>
+        </div>
+
+        <div class="footer__links">
+          <a href="#inicio">Início</a>
+          <a href="#faq">FAQ</a>
+          <a href="#quiz">Quiz</a>
+          <a href="#top" id="backToTopFooter">Topo</a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <button class="toTop" type="button" id="toTop" aria-label="Voltar ao topo" hidden>
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 4 4 12l1.4 1.4L11 7.8V20h2V7.8l5.6 5.6L20 12z" fill="currentColor"/>
+    </svg>
+  </button>
+
+  <!-- Modal lightbox (galeria) -->
+  <div class="modal" id="modal" role="dialog" aria-modal="true" aria-label="Visualização ampliada" hidden>
+    <div class="modal__backdrop" data-close></div>
+    <div class="modal__panel" role="document">
+      <div class="modal__head">
+        <span class="modal__title" id="modalTitle">Imagem</span>
+        <button class="modal__close" type="button" data-close aria-label="Fechar">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M18.3 5.71 12 12l6.3 6.29-1.41 1.42L10.59 13.4 4.29 19.71 2.88 18.3 9.17 12 2.88 5.71 4.29 4.29l6.3 6.3 6.3-6.3z" fill="currentColor"/>
+          </svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <img id="modalImg" alt="Imagem ampliada" src="" />
+      </div>
+    </div>
+  </div>
+
+  <script src="./script.js" defer></script>
+</body>
+</html>
+
