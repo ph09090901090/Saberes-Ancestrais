@@ -184,51 +184,7 @@ function initRevealOnScroll(){
   items.forEach(i => io.observe(i));
 }
 
-// ---------- Lightbox (Galeria) ----------
-function initGallery(){
-  const modal = $('#modal');
-  const backdrop = $('.modal__backdrop');
-  const closeBtn = $('[data-close]');
-  const modalImg = $('#modalImg');
-  const modalTitle = $('#modalTitle');
 
-  const open = (src, title) => {
-    if(!modal) return;
-    modal.hidden = false;
-    document.body.style.overflow = 'hidden';
-    modalImg.src = src;
-    if(modalImg) modalImg.alt = title || 'Imagem';
-    if(modalTitle) modalTitle.textContent = title || 'Imagem';
-  };
-
-  const close = () => {
-    if(!modal) return;
-    modal.hidden = true;
-    document.body.style.overflow = '';
-    if(modalImg) modalImg.src = '';
-  };
-
-  $$('.gItem').forEach(fig => {
-    const img = $('img', fig);
-    const title = fig.dataset.title || img?.alt || 'Imagem';
-    const src = img?.src;
-
-    const handler = () => {
-      if(src) open(src, title);
-    };
-
-    fig.addEventListener('click', handler);
-    fig.addEventListener('keydown', (e) => {
-      if(e.key === 'Enter' || e.key === ' ') handler();
-    });
-  });
-
-  if(backdrop) backdrop.addEventListener('click', close);
-  if(closeBtn) closeBtn.addEventListener('click', close);
-  window.addEventListener('keydown', (e) => {
-    if(e.key === 'Escape' && modal && !modal.hidden) close();
-  });
-}
 
 // ---------- FAQ accordion ----------
 // details/summary já é nativo e acessível. Nada necessário.
@@ -451,7 +407,7 @@ function boot(){
   initProgressAndTop();
   initSmoothScroll();
   initRevealOnScroll();
-  initGallery();
+
   initQuiz();
   initContact();
 }
